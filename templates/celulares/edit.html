@@ -1,0 +1,59 @@
+{% include 'header.html' %}
+{% for celulare in celulares  %}
+    
+<form method="post" action="/update" enctype="multipart/form-data">
+
+    <div class="card">
+        <div class="card-header">
+            Editar Celular
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Datos del equipo</h5>
+            <p class="card-text">
+                <div class="form-group">
+                    <label for="txtID"> ID: {{celulare[0]}}</label>
+                    <input id="txtID" type="hidden" class="edit-id" name="txtID" value="{{celulare[0]}}">
+                </div>
+                <div class="form-group">
+                    <label for="txtMarca">Marca</label>
+                    <input id="txtMarca" class="form-control" type="text" name="txtMarca">
+                </div>
+                <div class="form-group">
+                    <label for="txtModelo">Modelo</label>
+                    <input id="txtModelo" class="form-control" type="text" name="txtModelo">
+                </div>
+                <div class="form-group">
+                    <label for="txtFoto">Foto</label>
+                    <img class="img-thumbnail" width="100" src="/uploads/{{celulare[3]}}" alt="">
+                    <input type="file" class="form-control" name="txtFoto" id="txtFoto">
+                </div>
+                <div class="form-group">
+                    <label for="txtCarac1">Caracteristica 1</label>
+                    <input id="txtCarac1" class="form-control" type="text" name="txtCarac1">
+                </div>
+                <div class="form-group">
+                    <label for="txtCarac2">Caracteristica 2</label>
+                    <input id="txtCarac2" class="form-control" type="text" name="txtCarac2">
+                </div>
+                <div class="form-group">
+                    <label for="txtCarac3">Caracteristica 3</label>
+                    <input id="txtCarac3" class="form-control" type="text" name="txtCarac3">
+                </div>
+                <div class="form-group">
+                    <label for="txtPrecio">Precio</label>
+                    <input id="txtPrecio" class="form-control" type="text" name="txtPrecio">
+                </div>
+                <div class="form-group">
+                    <input value="Actualizar" class="btn btn-success" type="submit" >
+                    <a href="{{url_for('index')}}" class="btn btn-primary">Regresar</a>
+                </div>
+            </p>
+        </div>
+    </div>
+
+
+
+
+</form>
+{% endfor %}
+{% include 'footer.html' %}

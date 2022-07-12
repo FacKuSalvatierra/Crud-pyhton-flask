@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+body {
+    background-color: #FDFFD8;
+}
+
+
+/*Estilos de la navBar*/
+.titulo, .inicio {
+    font-size: 1.60rem;
+    font-style: italic;
+    color: white;
+    justify-content: space-between;
+}
+
+.inicio{
+    text-decoration: none;
+    padding: 0 30px;
+}
+
+.d-block{
+    height: 300px;
+}
+
+
+/*estilos de la card*/
+.card {
+    background-color: #ADFFAB;
+}
+
+.card-body, .card-title{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    gap: 25px;
+}
+
+.card-text{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    text-align: start;
+}
+
+.precio, .btn-precio {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    gap: 20px;
+}
+
+
+.modificador {
+    display: flex;
+    padding: 7px;
+    justify-content: space-between;
+}
+
+
+
+.card:hover {
+    box-shadow: 10px 10px 10px 10px #BCBCBF;
+}
+
+.btn-precio {
+    margin:20px auto;
+    padding: 20px;
+    background-color: #6EE2FF;
+}
+
+
+/*Estilos de las pestañas edit y create*/
+.edit-id{
+    display: hidden;
+    visibility: hidden;
+}
+
+
+
+/* estilos del Footer*/
+.futer {
+    display: flex;
+    margin: auto;
+    padding-top: 50px;
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+
+    background-color: aliceblue;
+    font-size: 1.50rem ;
+    color: #000000;
+}

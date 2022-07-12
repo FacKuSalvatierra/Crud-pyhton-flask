@@ -1,0 +1,76 @@
+{% include 'header.html' %}
+
+
+<!---Carrusel-->
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://www.casasilcar.com.ar/spree/slides/246/original/banners-1170-x-390-Julio-PROMO-CELULARES-01.png?1564690413" class="d-block w-100">
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.loginstore.com/imagenes/banner-superior-celulares-general-ofertas-mobile-1.jpg" class="d-block w-100">
+      </div>
+      <div class="carousel-item">
+        <img src="https://d22fxaf9t8d39k.cloudfront.net/ae6d4dc3698a1a53b89ff6c2cef3a3dd5643c3229e00bccd0addaf03c12015e184879.jpeg" class="d-block w-100">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+  <div class="container">
+  <!----Boton para agregar equipos al servidor-->
+  <br>
+  <a href="{{url_for("create")}}" class="btn btn-success">Vende tu producto aca! 👇</a>
+  <br>
+  <br>
+
+<div class="row row-cols-2 row-cols-md-3 g-4">
+    {% for celulare in celulares  %}
+    <div class="col">
+        <div class="card h-100"><span class="modificador">
+          <a href="/edit/{{celulare[0]}}" class="btn-edit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"  class="bi bi-pen-fill" viewBox="0 0 16 16">
+          <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z"/>
+        </svg></a><a href="/destroy/{{celulare[0]}}" class="btn-edit" onclick="return confirm('¿Esta seguro de eliminar el producto?')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"  class="bi bi-trash-fill" viewBox="0 0 16 16">
+            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+          </svg></a>
+        </span>
+            <img src="/uploads/{{celulare[3]}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{celulare[1]}}</h5>
+                <p class="card-text">
+                  &#8226;{{celulare[4]}}<br>
+                  &#8226;{{celulare[5]}}<br>
+                  &#8226;{{celulare[6]}}<br>
+                </p>
+            </div>
+            <div>
+            <h3 class="precio">
+                ${{celulare[7]}}
+            </h3>
+            <button class="btn-precio">COMPRAR</button>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+{% include 'footer.html' %}
