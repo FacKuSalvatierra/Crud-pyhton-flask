@@ -10,6 +10,19 @@ body {
 }
 
 
+.btn {
+    border: #000000 2px solid;
+    background-color: blue;
+    color: white;
+}
+
+.btn:hover {
+    background-color: blue;
+    color: white;
+    box-shadow: #000000 3px 3px 3px 3px;
+}
+
+
 /*Estilos de la navBar*/
 .titulo, .inicio {
     font-size: 1.60rem;
@@ -21,6 +34,11 @@ body {
 .inicio{
     text-decoration: none;
     padding: 0 30px;
+}
+
+.inicio:hover{
+    color: #FDFFD8;
+
 }
 
 .d-block{
@@ -46,6 +64,7 @@ body {
     flex-direction: column;
     margin: 0;
     text-align: start;
+    font-size: 1.5rem;
 }
 
 .precio, .btn-precio {
@@ -73,7 +92,16 @@ body {
     margin:20px auto;
     padding: 20px;
     background-color: #6EE2FF;
+    border: #000000 2px solid;
+    border-radius: 15%;
+
 }
+
+.btn-precio:hover{
+    box-shadow: #000000 4px 4px 4px 4px;
+
+}
+
 
 
 /*Estilos de las pestañas edit y create*/

@@ -8,7 +8,7 @@ from flask import send_from_directory
 
 
 app = Flask (__name__)
-app.secret_key="CodoaCodo"
+app.secret_key="FacKu"
 
 mysql = MySQL()
 app.config['MYSQL_DATABASE_HOST']='localhost'
